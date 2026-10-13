@@ -1,0 +1,586 @@
+.cf-category-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 45px 20px;
+
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 28px;
+
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================
+   LEFT SIDEBAR
+===================================== */
+
+.cf-category-sidebar {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #d4dce7;
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    height: fit-content;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+
+.cf-sidebar-title {
+    min-height: 54px;
+
+    padding: 0 18px;
+
+    background: #2d72b8;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.cf-menu-icon {
+    font-size: 17px;
+}
+
+
+/* =====================================
+   CATEGORY DROPDOWN
+===================================== */
+
+.cf-category-item {
+    border-bottom: 1px solid #dce3eb;
+}
+
+
+.cf-category-item:last-child {
+    border-bottom: 0;
+}
+
+
+.cf-category-item summary {
+    list-style: none;
+}
+
+
+.cf-category-item summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.cf-category-item summary {
+    min-height: 52px;
+
+    padding: 0 15px 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    color: #173b68;
+
+    background: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+
+.cf-category-item summary:hover {
+    background: #f1f7fc;
+    color: #1264a5;
+}
+
+
+.cf-category-item[open] > summary {
+    background: #eef6fd;
+    color: #1264a5;
+}
+
+
+.cf-arrow {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #b9c8d8;
+    border-radius: 3px;
+
+    color: #2d72b8;
+
+    font-size: 16px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.cf-category-item[open] .cf-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================
+   SUB MENU
+===================================== */
+
+.cf-submenu {
+    background: #f8fafc;
+
+    border-top: 1px solid #dce3eb;
+}
+
+
+.cf-submenu a {
+    position: relative;
+
+    display: block;
+
+    padding: 11px 14px 11px 30px;
+
+    color: #4b5c6e;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    border-bottom: 1px solid #e4e9ef;
+
+    transition: all 0.2s ease;
+}
+
+
+.cf-submenu a:last-child {
+    border-bottom: 0;
+}
+
+
+.cf-submenu a::before {
+    content: "›";
+
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #2d72b8;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.cf-submenu a:hover {
+    background: #e9f3fb;
+
+    color: #1264a5;
+
+    padding-left: 34px;
+}
+
+
+/* =====================================
+   RIGHT FEATURED AREA
+===================================== */
+
+.cf-featured-area {
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e6ed;
+
+    border-radius: 10px;
+
+    padding: 28px;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+
+/* =====================================
+   HEADING
+===================================== */
+
+.cf-section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 5px;
+}
+
+
+.cf-section-heading span {
+    width: 55px;
+    height: 1px;
+
+    background: #2d72b8;
+}
+
+
+.cf-section-heading p {
+    margin: 0;
+
+    color: #1d5f9d;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+}
+
+
+.cf-featured-area > h2 {
+    margin: 4px 0 25px;
+
+    text-align: center;
+
+    color: #102f55;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+
+.cf-featured-area > h2 strong {
+    color: #2d72b8;
+}
+
+
+/* =====================================
+   CARD GRID
+===================================== */
+
+.cf-featured-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+/* =====================================
+   MAIN CATEGORY CARD
+===================================== */
+
+.cf-main-card {
+    grid-row: span 2;
+
+    min-height: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: linear-gradient(
+        145deg,
+        #2d72b8 0%,
+        #2465a8 100%
+    );
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 15px rgba(28,85,139,0.18);
+
+    transition: all 0.25s ease;
+}
+
+
+.cf-main-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 24px rgba(28,85,139,0.25);
+}
+
+
+/* Main image */
+
+.cf-main-card .cf-card-image {
+    height: 250px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cf-main-card .cf-card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* Main category name */
+
+.cf-card-content {
+    padding: 10px 22px 25px;
+
+    margin-top: auto;
+
+    text-align: left;
+}
+
+
+.cf-card-content h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 21px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+
+/* =====================================
+   SUB CATEGORY CARDS
+===================================== */
+
+.cf-sub-card {
+    min-height: 203px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7ee;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.cf-sub-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #2d72b8;
+
+    box-shadow: 0 8px 20px rgba(45,114,184,0.14);
+}
+
+
+/* =====================================
+   SUB CATEGORY IMAGE
+===================================== */
+
+.cf-sub-image {
+    width: 100%;
+
+    height: 105px;
+
+    margin-bottom: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cf-sub-image img {
+    width: auto;
+
+    height: 75px;
+
+    max-width: 80%;
+
+    object-fit: contain;
+}
+
+
+/* =====================================
+   SUB CATEGORY NAME ONLY
+===================================== */
+
+.cf-sub-card h3 {
+    margin: 5px 0 0;
+
+    color: #164b82;
+
+    font-size: 14px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+}
+
+
+/* IMPORTANT:
+   Extra text/button completely removed
+*/
+
+.cf-sub-card p,
+.cf-sub-card > span {
+    display: none !important;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .cf-category-section {
+        grid-template-columns: 250px 1fr;
+
+        gap: 18px;
+
+        padding: 30px 15px;
+    }
+
+
+    .cf-featured-area {
+        padding: 20px;
+    }
+
+
+    .cf-featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .cf-main-card {
+        grid-row: span 1;
+
+        min-height: 330px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 767px) {
+
+    .cf-category-section {
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 25px 12px;
+
+        gap: 18px;
+    }
+
+
+    .cf-featured-area {
+        padding: 18px 12px;
+    }
+
+
+    .cf-featured-area > h2 {
+        font-size: 23px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .cf-featured-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+
+    .cf-main-card {
+        min-height: 260px;
+    }
+
+
+    .cf-main-card .cf-card-image {
+        height: 170px;
+    }
+
+
+    .cf-card-content h3 {
+        font-size: 17px;
+    }
+
+
+    .cf-sub-card {
+        min-height: 170px;
+
+        padding: 12px;
+    }
+
+
+    .cf-sub-image {
+        height: 85px;
+    }
+
+
+    .cf-sub-image img {
+        height: 60px;
+    }
+
+
+    .cf-sub-card h3 {
+        font-size: 12px;
+    }
+
+}
