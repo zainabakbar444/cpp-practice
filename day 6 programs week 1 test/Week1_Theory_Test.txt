@@ -1,0 +1,72 @@
+Q1: State the leap year rule in one line. Then determine whether each of the
+following is a leap year, with reasoning: 2024, 1900, 2000, 2100.
+
+Answer: A year is a leap year if it is divisible by 400, or divisible by 4
+but not by 100.
+- 2024 → Leap year (divisible by 4, not by 100)
+- 1900 → Not a leap year (divisible by 100 but not by 400)
+- 2000 → Leap year (divisible by 400)
+- 2100 → Not a leap year (divisible by 100 but not by 400)
+Q2: Is this prime check correct or wrong? Why?
+for(i=2; i<=n; i++) { if(n%i==0) return false; } return true;
+Trace with n=7 step-by-step and state the output.
+
+Answer: Wrong. With i<=n, the loop runs until i equals n. Since every number
+is divisible by itself (n%n == 0 always), the loop always finds a "divisor"
+at i==n and returns false — so every number is wrongly reported as not prime.
+For n=7: i=2..6 find no divisor, but at i=7, 7%7==0 → returns false (incorrect,
+7 is prime). Fix: use i<n so the loop stops before i reaches n.
+Q3: What happens if `return true;` is written INSIDE the loop in a prime check?
+Where should `return false` go, where should `return true` go — and why?
+
+Answer: `return false` goes inside the loop (as soon as a divisor is found —
+not prime is proven immediately). `return true` must go AFTER the loop, not
+inside it. If `return true` is inside the loop, the function returns after
+checking only the FIRST divisor — the search is incomplete. Example: n=9,
+i=2: 9%2!=0 → return true executes at once, but 9=3x3 is not prime. Wrong!
+Rule: false EARLY (inside loop), true LATE (after loop).
+Q4: What will this ladder print for 75? For 65? And why?
+if(p>=80) A; else if(p<=70) B; else if(p<=60) C; else if(p<=50) D; else F;
+
+Answer: 75 → F. No condition matches 75 (not >=80, not <=70/60/50), so it
+falls through to the final else. 65 → B. An else-if ladder evaluates
+top-down and the FIRST true condition wins — p<=70 is checked before p<=60.
+Lesson: order matters in else-if ladders; put the strictest condition first.
+Q5: int total=10000, friends=3; double per = total/friends;
+What will per hold? What is the correct way to get 3333.33?
+
+Answer: per = 3333.0. The division happens in int FIRST (10000/3 = 3333,
+decimal truncated), and only then is the result stored as double. Correct
+way: double per = (double)total/friends; — casting one operand to double
+forces floating-point division → 3333.33. Golden rule: always test with
+numbers that do NOT divide evenly.
+Q6: For computing a sum, should `int sum=0;` go INSIDE or OUTSIDE the loop?
+Why? And should the print go inside or after the loop?
+
+Answer: Declare sum OUTSIDE (before) the loop — inside, it would reset to 0
+on every iteration and nothing would accumulate. The accumulation
+(sum = sum+i;) goes INSIDE the loop. Print AFTER the loop (inside would
+print on every iteration). Rule: declare before, accumulate inside,
+print after.
+Q8: int square(int n){ return n*n; } — Can we use `n` inside main()? Why not?
+
+Answer: No. The parameter n lives ONLY inside the function (its scope ends
+at the function's closing brace). main() needs its own separate variable,
+e.g. int n = 2; square(n); — here the VALUE of main's n is passed into the
+function. Same name, two different variables in two different scopes.
+Q9: int age; cin>>age; — the user types "abc". What happens to the cin
+statements after it?
+
+Answer: The program does NOT stop — it keeps running. But cin enters a fail
+state ("broken"), and every cin after it is silently SKIPPED without waiting
+for input. Those variables keep garbage values. Worse than a crash — the
+program continues with wrong data. Lesson: an int field accepts only numbers.
+Q10: Spec: "Take 5 numbers, tell how many are even." — Write ONLY the IPO,
+no code.
+
+Answer:
+- Input: 5 numbers from the user, one by one.
+- Process: count=0; loop 5 times — take a number, if number%2==0 then count++.
+- Output: print count (once, after the loop).
+Lesson: "how many" means a COUNTER — the output is one number, not a label
+per input.
