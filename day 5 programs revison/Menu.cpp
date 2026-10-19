@@ -59,7 +59,6 @@ int main(){
             cout<<"Enter the units: ";cin>>units;cout<<endl;
             if(bijliBill(units) == -1){
                 cout<<"Invalid units";
-                return 0;
             }
             else{
             cout<<"you have to pay "<< bijliBill(units) <<" .RS according to your units."<<endl;
