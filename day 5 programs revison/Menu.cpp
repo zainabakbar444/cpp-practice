@@ -36,6 +36,7 @@ double bijliBill(int units){
     }
     return rate * units;  // ek return, sab ke baad!
 }
+
 int main(){
     int stdpercnt;
     
@@ -65,7 +66,21 @@ int main(){
             }
         }
         else if(choice == 3){
-            cout<<" Payslip"<<endl;
+            int BasicPay;
+            cout<<"enter basic pay: ";cin>>BasicPay;cout<<endl;
+            int HouseAllowance = BasicPay*0.30;
+            int MedicalAllowance = BasicPay*0.10;
+            int GrossPay = BasicPay+HouseAllowance+MedicalAllowance;
+            int TaxDeduction = GrossPay*0.05;
+            int NetPay = GrossPay-TaxDeduction;
+            cout<<"====== PAYSLIP ======"<<endl;
+            cout<<"Basic Pay:              "<<BasicPay<<endl;
+            cout<<"House Allowance (30%):  "<<HouseAllowance<<endl;
+            cout<<"Medical Allowance (10%): "<<MedicalAllowance<<endl;
+            cout<<"Gross Pay:              "<<GrossPay<<endl;
+            cout<<"Tax Deduction (5%):      "<<TaxDeduction<<endl;
+            cout<<"----------------------------"<<endl;
+            cout<<"Net Pay:                "<<NetPay<<endl;
         }
         else if(choice == 4){
             cout<<" Exit"<<endl;
