@@ -61,7 +61,7 @@ int main(){
                 return 0;
             }
             else{
-            cout<<"you have to pay "<< bijliBill(units) <<".RS according to your units."<<endl;
+            cout<<"you have to pay "<< bijliBill(units) <<" .RS according to your units."<<endl;
             }
         }
         else if(choice == 3){
